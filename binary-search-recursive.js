@@ -1,8 +1,7 @@
 function recursiveBinarySearch(array, key) {
     if (array.length === 0) {
         return false;
-    }
-    else {
+    }else {
         let midPoint = Math.floor(array.length / 2);
         if (array[midPoint] === key) {
             return true;
