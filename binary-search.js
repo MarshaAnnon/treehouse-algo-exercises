@@ -6,13 +6,13 @@ function binarySearch(array, key) {
         const midPoint = first + Math.floor((first + last) / 2);
         
         if (array[midPoint] === key) {
-            return midpoint;
+            return midPoint;
         }
         
         if (array[midPoint] < key) {
-            first = midpoint + 1
+            first = midPoint + 1
         }else {
-            last = midpoint - 1
+            last = midPoint - 1
         }
     }
     return -1;
