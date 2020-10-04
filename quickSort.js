@@ -1,19 +1,20 @@
 function quickSort(array) {
-    if(array.length === 0) {
-        return 0;
+    if(array.length <= 1) {
+        return array;
     }
-    let pivot = [0];
+    let pivot = array[0];
     let lessThanPivot = []
     let greaterThanPivot = []
 
-    for (value of array) {
-        if (value <= pivot) {
-            lessThanPivot.push(value)
+    // i=1 because pivot = 0
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] <= pivot) {
+            lessThanPivot.push(array[i]);
         } else {
-            greaterThanPivot.push(value)
+            greaterThanPivot.push(array[i]);
         }
     }
-    return quickSort(lessThanPivot) + pivot + quickSort(greaterThanPivot)
+    return quickSort(lessThanPivot).concat(pivot, quickSort(greaterThanPivot));
 }
  
 quickSort([4,6,3,2,9,7,3,5])
